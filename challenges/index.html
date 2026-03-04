@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es" data-theme="sunrise">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Retos - ODS 8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Retos">
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-icon" aria-hidden="true">🏆</div>
+                <span class="brand-title" data-i18n="header.subtitle">Retos</span>
+            </div>
+            <div class="header-right">
+                <div class="level">
+                    <span class="level-number" data-i18n="header.title">Nivel 12</span>
+                    <span class="level-status" data-i18n="header.status">Defensor Pro</span>
+                </div>
+                <button class="icon-button" type="button" aria-label="Notificaciones">
+                    <span aria-hidden="true">🔔</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="content" id="main-content">
+            <section class="card hero" aria-labelledby="weekly-challenge">
+                <div class="hero-badge" data-i18n="hero.badge">Reto semanal</div>
+                <div class="hero-body">
+                    <div>
+                        <h2 id="weekly-challenge" data-i18n="hero.title">Green CEO</h2>
+                        <p class="muted" data-i18n="hero.description">
+                            Equilibra beneficio y planeta en este simulador inmersivo.
+                        </p>
+                    </div>
+                    <button class="cta" type="button" id="play-now">
+                        <span class="cta-icon" aria-hidden="true">▶</span>
+                        <span data-i18n="hero.cta">Jugar ahora</span>
+                    </button>
+                </div>
+                <div class="hero-glow" aria-hidden="true"></div>
+            </section>
+
+            <section class="card progress" aria-labelledby="progress-title">
+                <div class="progress-header">
+                    <div>
+                        <p class="eyebrow" data-i18n="progress.label">Tu progreso</p>
+                        <h3 id="progress-title" aria-live="polite">
+                            <span id="xp-current">750</span> /
+                            <span id="xp-total">1000</span>
+                            <span class="unit">XP</span>
+                        </h3>
+                    </div>
+                    <button class="chip" type="button" id="bonus-xp" aria-pressed="false">
+                        <span data-i18n="progress.bonus">+250 XP para Oro</span>
+                    </button>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="1000"
+                    aria-valuenow="750">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="trivia-title">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow" data-i18n="trivia.eyebrow">Hora de trivia</p>
+                        <h3 id="trivia-title" data-i18n="trivia.title">Leyes laborales</h3>
+                    </div>
+                    <button class="link" type="button" data-i18n="trivia.viewAll">Ver todo</button>
+                </div>
+
+                <div class="card quiz" role="group" aria-labelledby="question-title">
+                    <div class="quiz-meta">
+                        <span class="quiz-tag" data-i18n="trivia.title">Leyes laborales</span>
+                        <span class="quiz-counter" id="quiz-counter" aria-live="polite"></span>
+                    </div>
+                    <h4 id="question-title" data-i18n="trivia.question">
+                        ¿Cuál es el máximo legal de horas semanales sin horas extra?
+                    </h4>
+                    <div class="answers" role="radiogroup" aria-describedby="answer-hint">
+                        <button class="answer" type="button" role="radio" aria-checked="false" data-answer="35">
+                            <span>35</span> <span class="muted">Horas</span>
+                        </button>
+                        <button class="answer" type="button" role="radio" aria-checked="false" data-answer="40">
+                            <span>40</span> <span class="muted">Horas</span>
+                        </button>
+                        <button class="answer" type="button" role="radio" aria-checked="false" data-answer="48">
+                            <span>48</span> <span class="muted">Horas</span>
+                        </button>
+                    </div>
+                    <p id="answer-hint" class="hint" aria-live="polite"></p>
+                </div>
+                <button class="swipe" type="button" id="next-question" data-i18n="trivia.swipe">
+                    Desliza para la siguiente pregunta
+                </button>
+            </section>
+
+            <section class="section" aria-labelledby="quickwins-title">
+                <div class="section-header">
+                    <h3 id="quickwins-title" data-i18n="quickwins.title">Logros rápidos</h3>
+                </div>
+
+                <div class="card quickwins-card">
+                    <div class="quickwin-item featured">
+                        <div class="quickwin-icon" aria-hidden="true">
+                            <span>↗</span>
+                        </div>
+                        <div class="quickwin-body">
+                            <h4 data-i18n="quickwins.item1.title">Corre la voz</h4>
+                            <p class="muted" data-i18n="quickwins.item1.subtitle">Comparte tu puntuación de impacto</p>
+                        </div>
+                        <button class="quickwin-xp" type="button" data-xp="50">+50 XP</button>
+                    </div>
+                    <div class="quickwin-divider" aria-hidden="true"></div>
+                    <div class="quickwin-item subdued">
+                        <div class="quickwin-icon muted" aria-hidden="true">
+                            <span>✓</span>
+                        </div>
+                        <div class="quickwin-body">
+                            <h4 data-i18n="quickwins.item2.title">Check-in diario</h4>
+                            <p class="muted" data-i18n="quickwins.item2.subtitle">Completado hoy</p>
+                        </div>
+                        <span class="quickwin-claimed" data-i18n="quickwins.claimed">Reclamado</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Principal">
+            <button class="nav-item" type="button" aria-label="Inicio">
+                <span class="nav-icon" aria-hidden="true">⌂</span>
+                <span class="nav-label" data-i18n="nav.home">Inicio</span>
+            </button>
+            <button class="nav-item" type="button" aria-label="Acción">
+                <span class="nav-icon" aria-hidden="true">◎</span>
+                <span class="nav-label" data-i18n="nav.action">Acción</span>
+            </button>
+            <button class="nav-item active" type="button" aria-label="Retos" aria-current="page">
+                <span class="nav-icon" aria-hidden="true">◉</span>
+                <span class="nav-label" data-i18n="nav.challenges">Retos</span>
+            </button>
+            <button class="nav-item" type="button" aria-label="Perfil">
+                <span class="nav-icon" aria-hidden="true">☺</span>
+                <span class="nav-label" data-i18n="nav.profile">Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal" id="weekly-modal" role="dialog" aria-modal="true" aria-labelledby="weekly-title" hidden>
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-card" role="document">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Reto semanal</p>
+                    <h2 id="weekly-title">Green CEO</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Cerrar" data-close="true">✕</button>
+            </div>
+            <p class="modal-text">
+                Toma 3 decisiones rápidas. Cada una afecta a Planeta, Personas y Beneficio.
+            </p>
+
+            <div class="meter-list">
+                <div class="meter">
+                    <div class="meter-label">
+                        <span>Planeta</span>
+                        <span class="meter-value" id="meter-planet-value">50%</span>
+                    </div>
+                    <div class="meter-track" aria-hidden="true">
+                        <div class="meter-fill" id="meter-planet"></div>
+                    </div>
+                </div>
+                <div class="meter">
+                    <div class="meter-label">
+                        <span>Personas</span>
+                        <span class="meter-value" id="meter-people-value">50%</span>
+                    </div>
+                    <div class="meter-track" aria-hidden="true">
+                        <div class="meter-fill" id="meter-people"></div>
+                    </div>
+                </div>
+                <div class="meter">
+                    <div class="meter-label">
+                        <span>Beneficio</span>
+                        <span class="meter-value" id="meter-profit-value">50%</span>
+                    </div>
+                    <div class="meter-track" aria-hidden="true">
+                        <div class="meter-fill" id="meter-profit"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sim-step" id="sim-step">
+                <p class="step-tag" id="sim-counter">Decision 1 de 3</p>
+                <h3 class="step-title" id="sim-question">Cambias a proveedores con menor huella ambiental.</h3>
+                <div class="step-actions" id="sim-actions">
+                    <button class="step-choice" type="button" data-impact="planet:12,people:6,profit:-8">
+                        Mantener el cambio
+                    </button>
+                    <button class="step-choice" type="button" data-impact="planet:-6,people:-4,profit:10">
+                        Volver al proveedor anterior
+                    </button>
+                </div>
+            </div>
+
+            <div class="sim-result" id="sim-result" hidden>
+                <h3>Resumen</h3>
+                <p id="sim-summary">
+                    Has equilibrado los tres pilares con decisiones responsables.
+                </p>
+                <button class="cta" type="button" id="sim-claim">Reclamar +100 XP</button>
+                <button class="step-choice" type="button" id="sim-reset">Reiniciar reto</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
