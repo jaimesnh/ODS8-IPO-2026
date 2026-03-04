@@ -645,13 +645,52 @@ body {
 
     .app {
         border-radius: 26px;
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    * {
-        scroll-behavior: auto !important;
-        transition: none !important;
-        animation: none !important;
-    }
+/* --- Accessibility Modes --- */
+
+body.large-text {
+    font-size: 110%;
+}
+
+body.large-text .brand-title {
+    font-size: 18px;
+}
+
+body.large-text .hero-body h2 {
+    font-size: 26px;
+}
+
+body.large-text .hero-body p {
+    font-size: 18px;
+}
+
+body.large-text .progress-header h3 {
+    font-size: 20px;
+}
+
+body.large-text .section-header h3 {
+    font-size: 18px;
+}
+
+body.large-text .quiz h4 {
+    font-size: 18px;
+}
+
+body.large-text .quickwin-body h4 {
+    font-size: 16px;
+}
+
+body.large-text .nav-label {
+    font-size: 12px;
 }

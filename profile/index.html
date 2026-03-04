@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mobile-container">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="https://i.pravatar.cc/150?img=44" alt="Alex Harrison" class="avatar">
+                <button class="edit-btn" aria-label="Edit Profile">
+                    <i class="ph-fill ph-pencil-simple"></i>
+                </button>
+            </div>
+            <div class="profile-info">
+                <h1>Alex Harrison</h1>
+                <p>Member since July 2023</p>
+            </div>
+        </header>
+
+        <!-- Achievements -->
+        <section class="achievements-section">
+            <div class="section-header">
+                <h2>Achievements</h2>
+                <button type="button" class="view-all" id="view-all-btn">View All</button>
+            </div>
+            <div class="badges-grid">
+                <div class="badge-item active">
+                    <div class="badge-icon bg-orange-light">
+                        <i class="ph-fill ph-medal text-orange"></i>
+                    </div>
+                    <span>FAST LEARNER</span>
+                </div>
+                <div class="badge-item active">
+                    <div class="badge-icon bg-orange-light">
+                        <i class="ph-fill ph-certificate text-orange"></i>
+                    </div>
+                    <span>7-DAY STREAK</span>
+                </div>
+                <div class="badge-item active">
+                    <div class="badge-icon bg-orange-light">
+                        <i class="ph-fill ph-sparkle text-orange"></i>
+                    </div>
+                    <span>COURSE PRO</span>
+                </div>
+                <div class="badge-item locked">
+                    <div class="badge-icon bg-gray-light">
+                        <i class="ph-fill ph-lock-key text-gray"></i>
+                    </div>
+                    <span>MASTERY</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Settings -->
+        <section class="settings-card">
+            <h3 class="card-title">ACCESSIBILITY SETTINGS</h3>
+            <ul class="settings-list">
+                <li class="setting-item">
+                    <div class="setting-icon">
+                        <i class="ph-fill ph-circle-half-tilt"></i>
+                    </div>
+                    <div class="setting-text">
+                        <h4>High Contrast Mode</h4>
+                        <p>Enhance visual clarity</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="high-contrast" checked>
+                        <span class="slider"></span>
+                    </label>
+                </li>
+                <li class="setting-item">
+                    <div class="setting-icon">
+                        <i class="ph-bold ph-text-t"></i>
+                    </div>
+                    <div class="setting-text">
+                        <h4>Increase Text Size</h4>
+                        <p>Larger fonts for easier reading</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="large-text">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+                <li class="setting-item">
+                    <div class="setting-icon">
+                        <i class="ph-fill ph-closed-captioning"></i>
+                    </div>
+                    <div class="setting-text">
+                        <h4>Subtitles</h4>
+                        <p>Enable captions for all videos</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="subtitles" checked>
+                        <span class="slider"></span>
+                    </label>
+                </li>
+                <li class="setting-item">
+                    <div class="setting-icon">
+                        <i class="ph-bold ph-vibrate"></i>
+                    </div>
+                    <div class="setting-text">
+                        <h4>Haptic Feedback</h4>
+                        <p>Tactile response on interaction</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="haptic">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Account Details -->
+        <div class="action-card" id="account-details-btn">
+            <div class="action-left">
+                <i class="ph ph-user"></i>
+                <span>Account Details</span>
+            </div>
+            <i class="ph ph-caret-right text-light"></i>
+        </div>
+
+        <!-- Sign Out -->
+        <div class="action-card danger" id="sign-out-btn">
+            <div class="action-left">
+                <i class="ph ph-sign-out"></i>
+                <span>Sign Out</span>
+            </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Principal">
+            <button class="nav-item" type="button" aria-label="Inicio">
+                <span class="nav-icon" aria-hidden="true">⌂</span>
+                <span class="nav-label" data-i18n="nav.home">Inicio</span>
+            </button>
+            <button class="nav-item" type="button" aria-label="Acción">
+                <span class="nav-icon" aria-hidden="true">◎</span>
+                <span class="nav-label" data-i18n="nav.action">Acción</span>
+            </button>
+            <a href="../challenges/index.html" class="nav-item" aria-label="Retos" style="text-decoration:none;">
+                <span class="nav-icon" aria-hidden="true">◉</span>
+                <span class="nav-label" data-i18n="nav.challenges">Retos</span>
+            </a>
+            <button class="nav-item active" type="button" aria-label="Perfil" aria-current="page">
+                <span class="nav-icon" aria-hidden="true">☺</span>
+                <span class="nav-label" data-i18n="nav.profile">Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Achievements Modal -->
+    <div class="modal" id="achievements-modal" role="dialog" aria-modal="true" aria-labelledby="achievements-title"
+        hidden>
+        <div class="modal-backdrop" data-close="achievements"></div>
+        <div class="modal-card" role="document">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Tu progreso</p>
+                    <h2 id="achievements-title">All Achievements</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Cerrar" data-close="achievements">✕</button>
+            </div>
+
+            <div
+                style="display: grid; gap: 12px; margin-top: 16px; max-height: 50vh; overflow-y: auto; padding-right: 8px;">
+                <!-- Fast Learner -->
+                <div
+                    style="display: flex; gap: 16px; align-items: center; padding: 12px; background: var(--gray-light); border-radius: 16px;">
+                    <div
+                        style="width: 48px; height: 48px; background: #fff4ec; color: var(--accent); border-radius: 12px; display: grid; place-items: center; font-size: 24px; flex-shrink: 0;">
+                        <i class="ph-fill ph-medal"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">Fast Learner</h4>
+                        <p class="muted" style="margin: 0; font-size: 12px;">Complete 5 modules in a single week.</p>
+                    </div>
+                </div>
+                <!-- 7-Day Streak -->
+                <div
+                    style="display: flex; gap: 16px; align-items: center; padding: 12px; background: var(--gray-light); border-radius: 16px;">
+                    <div
+                        style="width: 48px; height: 48px; background: #fff4ec; color: var(--accent); border-radius: 12px; display: grid; place-items: center; font-size: 24px; flex-shrink: 0;">
+                        <i class="ph-fill ph-certificate"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">7-Day Streak</h4>
+                        <p class="muted" style="margin: 0; font-size: 12px;">Log in for 7 consecutive days.</p>
+                    </div>
+                </div>
+                <!-- Mastery (Locked) -->
+                <div
+                    style="display: flex; gap: 16px; align-items: center; padding: 12px; background: transparent; border: 1px dashed var(--border-color); border-radius: 16px; opacity: 0.6;">
+                    <div
+                        style="width: 48px; height: 48px; background: var(--border-color); color: var(--text-muted); border-radius: 12px; display: grid; place-items: center; font-size: 24px; flex-shrink: 0;">
+                        <i class="ph-fill ph-lock-key"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">Mastery</h4>
+                        <p class="muted" style="margin: 0; font-size: 12px;">Complete all advanced challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Details Modal -->
+    <div class="modal" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title" hidden>
+        <div class="modal-backdrop" data-close="account"></div>
+        <div class="modal-card" role="document">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Settings</p>
+                    <h2 id="account-title">Account Details</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Cerrar" data-close="account">✕</button>
+            </div>
+
+            <div style="display: grid; gap: 16px; margin-top: 16px;">
+                <div>
+                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Full Name</label>
+                    <input type="text" value="Alex Harrison"
+                        style="width: 100%; padding: 12px 14px; background: var(--gray-light); border: 1px solid var(--border-color); border-radius: 12px; font-family: inherit; font-size: 14px; color: var(--text-main);">
+                </div>
+                <div>
+                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Email Address</label>
+                    <input type="email" value="alex.harrison@example.com"
+                        style="width: 100%; padding: 12px 14px; background: var(--gray-light); border: 1px solid var(--border-color); border-radius: 12px; font-family: inherit; font-size: 14px; color: var(--text-main);">
+                </div>
+                <button class="cta" id="save-account-btn"
+                    style="width: 100%; justify-content: center; margin-top: 8px;">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subtitles Mock Banner -->
+    <div class="subtitles-banner" aria-live="polite">
+        [Subtitles Enabled] - This is a simulation of active subtitles.
+    </div>
+
+    <script src="../global-a11y.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
