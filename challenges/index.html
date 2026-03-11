@@ -158,6 +158,111 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    <!-- Panel de notificaciones -->
+    <div class="notif-panel" id="notif-panel" hidden role="dialog" aria-modal="true" aria-label="Notificaciones">
+        <div class="notif-backdrop" id="notif-backdrop"></div>
+        <div class="notif-card">
+            <div class="notif-header">
+                <h3>Notificaciones</h3>
+                <button class="icon-button" type="button" id="notif-close" aria-label="Cerrar notificaciones">✕</button>
+            </div>
+            <ul class="notif-list" role="list">
+                <li class="notif-item unread" role="listitem">
+                    <span class="notif-icon" aria-hidden="true">🏆</span>
+                    <div class="notif-body">
+                        <p class="notif-text">¡Nuevo reto semanal disponible! <strong>Green CEO</strong></p>
+                        <p class="notif-time">Hace 2 horas</p>
+                    </div>
+                </li>
+                <li class="notif-item" role="listitem">
+                    <span class="notif-icon" aria-hidden="true">⭐</span>
+                    <div class="notif-body">
+                        <p class="notif-text">Conseguiste la insignia <strong>Primera trivia</strong></p>
+                        <p class="notif-time">Hace 1 día</p>
+                    </div>
+                </li>
+                <li class="notif-item" role="listitem">
+                    <span class="notif-icon" aria-hidden="true">📢</span>
+                    <div class="notif-body">
+                        <p class="notif-text">Tu amigo Alex también juega al ODS 8</p>
+                        <p class="notif-time">Hace 3 días</p>
+                    </div>
+                </li>
+                <li class="notif-item" role="listitem">
+                    <span class="notif-icon" aria-hidden="true">🎯</span>
+                    <div class="notif-body">
+                        <p class="notif-text">Completaste 3 trivias seguidas esta semana</p>
+                        <p class="notif-time">Hace 5 días</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal de leyes laborales -->
+    <div class="modal" id="laws-modal" role="dialog" aria-modal="true" aria-labelledby="laws-title" hidden>
+        <div class="modal-backdrop" id="laws-backdrop"></div>
+        <div class="modal-card laws-modal-card">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Referencia</p>
+                    <h2 id="laws-title">Leyes laborales</h2>
+                </div>
+                <button class="icon-button" type="button" id="laws-close" aria-label="Cerrar">✕</button>
+            </div>
+            <div class="laws-list">
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">ET</span>
+                        <h4>Estatuto de los Trabajadores</h4>
+                    </div>
+                    <p>Norma principal que regula la relación laboral. Recoge derechos como el salario mínimo, la jornada máxima de <strong>40 h/semana</strong> y el descanso mínimo de 12 h entre jornadas.</p>
+                    <a class="law-link" href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Leer extracto en BOE ↗</a>
+                </div>
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">SMI</span>
+                        <h4>Salario Mínimo Interprofesional</h4>
+                    </div>
+                    <p>Cantidad mínima que debe percibir cualquier trabajador. En 2025 se sitúa en <strong>1.184 €/mes</strong> en 14 pagas.</p>
+                    <a class="law-link" href="https://www.boe.es/buscar/act.php?id=BOE-A-2024-26152" target="_blank" rel="noopener">Leer extracto en BOE ↗</a>
+                </div>
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">LRJS</span>
+                        <h4>Ley Reguladora de la Jurisdicción Social</h4>
+                    </div>
+                    <p>Establece el procedimiento para resolver conflictos laborales ante los tribunales. Protege al trabajador ante despidos improcedentes.</p>
+                    <a class="law-link" href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-15936" target="_blank" rel="noopener">Leer extracto en BOE ↗</a>
+                </div>
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">LPRL</span>
+                        <h4>Ley de Prevención de Riesgos Laborales</h4>
+                    </div>
+                    <p>Obliga a las empresas a garantizar la seguridad y salud de sus empleados mediante evaluaciones de riesgo y equipos de protección.</p>
+                    <a class="law-link" href="https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292" target="_blank" rel="noopener">Leer extracto en BOE ↗</a>
+                </div>
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">LOIMH</span>
+                        <h4>Ley de Igualdad entre Mujeres y Hombres</h4>
+                    </div>
+                    <p>Prohíbe la discriminación salarial por género y exige planes de igualdad en empresas de más de 50 trabajadores.</p>
+                    <a class="law-link" href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115" target="_blank" rel="noopener">Leer extracto en BOE ↗</a>
+                </div>
+                <div class="law-item">
+                    <div class="law-item-header">
+                        <span class="law-tag">TGSS</span>
+                        <h4>Seguridad Social</h4>
+                    </div>
+                    <p>Todo trabajador por cuenta ajena debe estar afiliado. Cubre incapacidad, desempleo, jubilación y maternidad/paternidad.</p>
+                    <a class="law-link" href="https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/Afiliacion/10549" target="_blank" rel="noopener">Leer más en Seg-Social.es ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal" id="weekly-modal" role="dialog" aria-modal="true" aria-labelledby="weekly-title" hidden>
         <div class="modal-backdrop" data-close="true"></div>
         <div class="modal-card" role="document">
@@ -223,6 +328,14 @@
                 <button class="cta" type="button" id="sim-claim">Reclamar +100 XP</button>
                 <button class="step-choice" type="button" id="sim-reset">Reiniciar reto</button>
             </div>
+        </div>
+    </div>
+
+    <div class="levelup-overlay" id="levelup-overlay" hidden aria-live="assertive">
+        <div class="levelup-badge" role="status">
+            <span class="levelup-emoji">🎉</span>
+            <h3>¡Nivel completado!</h3>
+            <p>Has alcanzado el máximo de XP. ¡Eres un Defensor Pro!</p>
         </div>
     </div>
 

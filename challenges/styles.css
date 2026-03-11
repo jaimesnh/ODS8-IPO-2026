@@ -694,3 +694,349 @@ body.large-text .quickwin-body h4 {
 body.large-text .nav-label {
     font-size: 12px;
 }
+
+/* ── Alto contraste ──────────────────────────────── */
+
+body.high-contrast {
+    --bg: #0d1117;
+    --card: #161b22;
+    --ink: #f0f6fc;
+    --muted: #8b949e;
+    --accent: #ff7b00;
+    --accent-dark: #ff9f1a;
+    --accent-soft: #2d1800;
+    --nav: #161b22;
+    --nav-muted: #8b949e;
+    --ring: #58a6ff;
+    /* El fondo exterior (fuera del móvil) no cambia */
+}
+
+body.high-contrast .app {
+    background: var(--bg);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.6);
+}
+
+body.high-contrast .card {
+    background: var(--card);
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .hero {
+    background: linear-gradient(120deg, #0a0c11 0%, #111622 60%, #181c2a 100%);
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .bottom-nav {
+    background: #161b22;
+    border-top-color: #30363d;
+}
+
+body.high-contrast .icon-button {
+    background: #21262d;
+    color: var(--ink);
+    box-shadow: none;
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .answer {
+    background: #21262d;
+    border-color: #30363d;
+    color: var(--ink);
+}
+
+body.high-contrast .answer[aria-checked="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+body.high-contrast .progress-track {
+    background: #21262d;
+}
+
+body.high-contrast .quickwins-card {
+    background: #1a1608;
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .quickwin-icon.muted {
+    background: #21262d;
+    color: var(--muted);
+}
+
+body.high-contrast .quickwin-xp {
+    background: #2d1800;
+    color: var(--accent);
+}
+
+body.high-contrast .chip {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
+body.high-contrast .modal-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .step-choice {
+    background: #21262d;
+    border-color: #30363d;
+    color: var(--ink);
+}
+
+body.high-contrast .meter-track {
+    background: #21262d;
+}
+
+body.high-contrast .link {
+    color: var(--accent-dark);
+}
+
+body.high-contrast .notif-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .notif-item {
+    border-bottom-color: #30363d;
+}
+
+body.high-contrast .notif-item.unread {
+    background: #1f2a0d;
+}
+
+body.high-contrast .laws-modal-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+}
+
+body.high-contrast .law-item {
+    border-bottom-color: #30363d;
+}
+
+/* ── Panel de notificaciones ─────────────────────── */
+
+.notif-panel {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 25;
+}
+
+.notif-panel[hidden] {
+    display: none;
+}
+
+.notif-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 17, 24, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+.notif-card {
+    position: relative;
+    z-index: 1;
+    width: min(360px, 92vw);
+    background: #fff;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 26px 60px rgba(15, 17, 24, 0.3);
+    max-height: 80vh;
+    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.notif-header h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.notif-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.notif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid #eef0f4;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.notif-item.unread {
+    background: #fffbf7;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.notif-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.notif-body {
+    display: grid;
+    gap: 3px;
+}
+
+.notif-text {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.4;
+}
+
+.notif-time {
+    margin: 0;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ── Modal leyes laborales ───────────────────────── */
+
+.laws-modal-card {
+    max-height: 82vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: min(380px, 94vw);
+}
+
+.laws-list {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-right: 2px;
+}
+
+.law-item {
+    padding: 14px 2px;
+    border-bottom: 1px solid #eef0f4;
+}
+
+.law-item:last-child {
+    border-bottom: none;
+}
+
+.law-item-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.law-item-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.law-tag {
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    border-radius: 6px;
+    padding: 3px 7px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+}
+
+.law-item p {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.law-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.law-link:hover {
+    text-decoration: underline;
+}
+
+body.high-contrast .law-link {
+    color: var(--accent-dark);
+}
+
+/* ── Level-up overlay ────────────────────────────── */
+
+.levelup-overlay {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.levelup-overlay[hidden] {
+    display: none;
+}
+
+.levelup-badge {
+    background: linear-gradient(135deg, #f26522, #ff9f1a);
+    color: #fff;
+    border-radius: 22px;
+    padding: 24px 32px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(242, 101, 34, 0.45);
+    animation: levelup-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.levelup-badge .levelup-emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.levelup-badge h3 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-family: "Fraunces", serif;
+}
+
+.levelup-badge p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+@keyframes levelup-pop {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+}

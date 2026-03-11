@@ -6,6 +6,8 @@ const state = {
   bonusClaimed: false,
   quizIndex: 0,
   answeredByLocale: {},
+  maxXpShown: false,
+  level: 12,
 };
 
 const i18n = {
@@ -179,6 +181,17 @@ const simSummary = document.getElementById("sim-summary");
 const simClaim = document.getElementById("sim-claim");
 const simReset = document.getElementById("sim-reset");
 
+// Nuevos elementos
+const bellButton = document.querySelector('.icon-button[aria-label="Notificaciones"]');
+const notifPanel = document.getElementById("notif-panel");
+const notifClose = document.getElementById("notif-close");
+const notifBackdrop = document.getElementById("notif-backdrop");
+const lawsModal = document.getElementById("laws-modal");
+const lawsClose = document.getElementById("laws-close");
+const lawsBackdrop = document.getElementById("laws-backdrop");
+const viewAllButton = document.querySelector('.link[data-i18n="trivia.viewAll"]');
+const levelupOverlay = document.getElementById("levelup-overlay");
+
 function setLocale(locale) {
   state.locale = i18n[locale] ? locale : "es";
   document.documentElement.lang = state.locale;
@@ -200,6 +213,11 @@ function updateProgress() {
   const percentage = Math.min((state.xpCurrent / state.xpTotal) * 100, 100);
   progressFill.style.width = `${percentage}%`;
   progressTrack.setAttribute("aria-valuenow", `${state.xpCurrent}`);
+
+  if (state.xpCurrent >= state.xpTotal && !state.maxXpShown) {
+    state.maxXpShown = true;
+    showLevelUp();
+  }
 }
 
 function showToast(message) {
@@ -610,9 +628,22 @@ xpButtons.forEach((button) => {
       showToast(i18n[state.locale]["toast.xp"]);
     }
 
-    button.classList.add("muted");
-    button.setAttribute("aria-disabled", "true");
-    button.textContent = i18n[state.locale]["quickwins.claimed"];
+    // Cambiar visualmente el item a "reclamado" igual que el check-in diario
+    const item = button.closest(".quickwin-item");
+    if (item) {
+      item.classList.remove("featured");
+      item.classList.add("subdued");
+      const icon = item.querySelector(".quickwin-icon");
+      if (icon) {
+        icon.classList.add("muted");
+        const iconSpan = icon.querySelector("span");
+        if (iconSpan) iconSpan.textContent = "✓";
+      }
+    }
+    const claimedSpan = document.createElement("span");
+    claimedSpan.className = "quickwin-claimed";
+    claimedSpan.textContent = i18n[state.locale]["quickwins.claimed"];
+    button.replaceWith(claimedSpan);
   });
 });
 
@@ -622,3 +653,88 @@ renderQuestion();
 updateWeeklyCtaState();
 
 window.setLocale = setLocale;
+
+// ── XP máximo: subida de nivel y reseteo de barra ─
+function showLevelUp() {
+  state.level += 1;
+
+  // Actualizar texto de nivel en el header
+  const levelNumberEl = document.querySelector(".level-number");
+  if (levelNumberEl) {
+    levelNumberEl.textContent = `Nivel ${state.level}`;
+  }
+
+  // Actualizar overlay con el nuevo nivel
+  const badgeTitle = levelupOverlay.querySelector("h3");
+  const badgeDesc  = levelupOverlay.querySelector("p");
+  if (badgeTitle) badgeTitle.textContent = `¡Subiste al Nivel ${state.level}!`;
+  if (badgeDesc)  badgeDesc.textContent  = `La barra se reinicia. ¡Sigue ganando XP!`;
+
+  showToast(`🏆 ¡Nivel ${state.level} alcanzado!`);
+  levelupOverlay.hidden = false;
+  levelupOverlay.style.pointerEvents = "auto";
+
+  setTimeout(() => {
+    levelupOverlay.style.opacity = "0";
+    levelupOverlay.style.transition = "opacity 0.5s ease";
+    setTimeout(() => {
+      levelupOverlay.hidden = true;
+      levelupOverlay.style.opacity = "";
+      levelupOverlay.style.transition = "";
+      levelupOverlay.style.pointerEvents = "none";
+
+      // Resetear barra de XP
+      state.xpCurrent = 0;
+      state.maxXpShown = false;
+      updateProgress();
+    }, 500);
+  }, 2800);
+}
+
+// ── Panel de notificaciones ────────────────────────
+function openNotifPanel() {
+  notifPanel.hidden = false;
+  notifClose.focus();
+}
+
+function closeNotifPanel() {
+  notifPanel.hidden = true;
+  bellButton.focus();
+}
+
+bellButton.addEventListener("click", () => {
+  if (notifPanel.hidden) {
+    openNotifPanel();
+  } else {
+    closeNotifPanel();
+  }
+});
+
+notifClose.addEventListener("click", closeNotifPanel);
+notifBackdrop.addEventListener("click", closeNotifPanel);
+
+notifPanel.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeNotifPanel();
+});
+
+// ── Modal de leyes laborales ───────────────────────
+function openLawsModal() {
+  lawsModal.hidden = false;
+  lawsClose.focus();
+}
+
+function closeLawsModal() {
+  lawsModal.hidden = true;
+  if (viewAllButton) viewAllButton.focus();
+}
+
+if (viewAllButton) {
+  viewAllButton.addEventListener("click", openLawsModal);
+}
+
+lawsClose.addEventListener("click", closeLawsModal);
+lawsBackdrop.addEventListener("click", closeLawsModal);
+
+lawsModal.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLawsModal();
+});
