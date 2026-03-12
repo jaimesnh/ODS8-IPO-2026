@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,61 +16,61 @@
         <header class="profile-header">
             <div class="avatar-container">
                 <img src="https://i.pravatar.cc/150?img=44" alt="Alex Harrison" class="avatar">
-                <button class="edit-btn" aria-label="Edit Profile">
+                <button class="edit-btn" aria-label="Editar perfil">
                     <i class="ph-fill ph-pencil-simple"></i>
                 </button>
             </div>
             <div class="profile-info">
                 <h1>Alex Harrison</h1>
-                <p>Member since July 2023</p>
+                <p>Miembro desde julio de 2023</p>
             </div>
         </header>
 
         <!-- Achievements -->
         <section class="achievements-section">
             <div class="section-header">
-                <h2>Achievements</h2>
-                <button type="button" class="view-all" id="view-all-btn">View All</button>
+                <h2>Logros</h2>
+                <button type="button" class="view-all" id="view-all-btn">Ver todos</button>
             </div>
             <div class="badges-grid">
                 <div class="badge-item active">
                     <div class="badge-icon bg-orange-light">
                         <i class="ph-fill ph-medal text-orange"></i>
                     </div>
-                    <span>FAST LEARNER</span>
+                    <span>APRENDIZ RÁPIDO</span>
                 </div>
                 <div class="badge-item active">
                     <div class="badge-icon bg-orange-light">
                         <i class="ph-fill ph-certificate text-orange"></i>
                     </div>
-                    <span>7-DAY STREAK</span>
+                    <span>7 DÍAS SEGUIDOS</span>
                 </div>
                 <div class="badge-item active">
                     <div class="badge-icon bg-orange-light">
                         <i class="ph-fill ph-sparkle text-orange"></i>
                     </div>
-                    <span>COURSE PRO</span>
+                    <span>PRO DEL CURSO</span>
                 </div>
                 <div class="badge-item locked">
                     <div class="badge-icon bg-gray-light">
                         <i class="ph-fill ph-lock-key text-gray"></i>
                     </div>
-                    <span>MASTERY</span>
+                    <span>MAESTRÍA</span>
                 </div>
             </div>
         </section>
 
         <!-- Accessibility Settings -->
         <section class="settings-card">
-            <h3 class="card-title">ACCESSIBILITY SETTINGS</h3>
+            <h3 class="card-title">CONFIGURACIÓN DE ACCESIBILIDAD</h3>
             <ul class="settings-list">
                 <li class="setting-item">
                     <div class="setting-icon">
                         <i class="ph-fill ph-circle-half-tilt"></i>
                     </div>
                     <div class="setting-text">
-                        <h4>High Contrast Mode</h4>
-                        <p>Enhance visual clarity</p>
+                        <h4>Modo Alto Contraste</h4>
+                        <p>Mejora la claridad visual</p>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="high-contrast" checked>
@@ -82,8 +82,8 @@
                         <i class="ph-bold ph-text-t"></i>
                     </div>
                     <div class="setting-text">
-                        <h4>Increase Text Size</h4>
-                        <p>Larger fonts for easier reading</p>
+                        <h4>Aumentar tamaño del texto</h4>
+                        <p>Fuentes más grandes para leer mejor</p>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="large-text">
@@ -95,8 +95,8 @@
                         <i class="ph-fill ph-closed-captioning"></i>
                     </div>
                     <div class="setting-text">
-                        <h4>Subtitles</h4>
-                        <p>Enable captions for all videos</p>
+                        <h4>Subtítulos</h4>
+                        <p>Activar subtítulos en todos los vídeos</p>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="subtitles" checked>
@@ -108,8 +108,8 @@
                         <i class="ph-bold ph-vibrate"></i>
                     </div>
                     <div class="setting-text">
-                        <h4>Haptic Feedback</h4>
-                        <p>Tactile response on interaction</p>
+                        <h4>Vibración táctil</h4>
+                        <p>Respuesta háptica al interactuar</p>
                     </div>
                     <label class="toggle-switch">
                         <input type="checkbox" id="haptic">
@@ -123,7 +123,7 @@
         <div class="action-card" id="account-details-btn">
             <div class="action-left">
                 <i class="ph ph-user"></i>
-                <span>Account Details</span>
+                <span>Detalles de la cuenta</span>
             </div>
             <i class="ph ph-caret-right text-light"></i>
         </div>
@@ -132,15 +132,15 @@
         <div class="action-card danger" id="sign-out-btn">
             <div class="action-left">
                 <i class="ph ph-sign-out"></i>
-                <span>Sign Out</span>
+                <span>Cerrar sesión</span>
             </div>
         </div>
 
         <nav class="bottom-nav" aria-label="Principal">
-            <button class="nav-item" type="button" aria-label="Inicio">
+            <a href="../main-page/index.html" class="nav-item" aria-label="Inicio" style="text-decoration:none;">
                 <span class="nav-icon" aria-hidden="true">⌂</span>
                 <span class="nav-label" data-i18n="nav.home">Inicio</span>
-            </button>
+            </a>
             <a href="../actions and tools/index.html" class="nav-item" aria-label="Acción" style="text-decoration:none;">
                 <span class="nav-icon" aria-hidden="true">◎</span>
                 <span class="nav-label" data-i18n="nav.action">Acción</span>
@@ -164,7 +164,7 @@
             <div class="modal-header">
                 <div>
                     <p class="eyebrow">Tu progreso</p>
-                    <h2 id="achievements-title">All Achievements</h2>
+                    <h2 id="achievements-title">Todos los logros</h2>
                 </div>
                 <button class="icon-button" type="button" aria-label="Cerrar" data-close="achievements">✕</button>
             </div>
@@ -179,8 +179,8 @@
                         <i class="ph-fill ph-medal"></i>
                     </div>
                     <div>
-                        <h4 style="margin: 0 0 4px; font-size: 14px;">Fast Learner</h4>
-                        <p class="muted" style="margin: 0; font-size: 12px;">Complete 5 modules in a single week.</p>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">Aprendiz Rápido</h4>
+                    <p class="muted" style="margin: 0; font-size: 12px;">Completa 5 módulos en una semana.</p>
                     </div>
                 </div>
                 <!-- 7-Day Streak -->
@@ -191,8 +191,8 @@
                         <i class="ph-fill ph-certificate"></i>
                     </div>
                     <div>
-                        <h4 style="margin: 0 0 4px; font-size: 14px;">7-Day Streak</h4>
-                        <p class="muted" style="margin: 0; font-size: 12px;">Log in for 7 consecutive days.</p>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">7 Días Seguidos</h4>
+                    <p class="muted" style="margin: 0; font-size: 12px;">Inicia sesión 7 días consecutivos.</p>
                     </div>
                 </div>
                 <!-- Mastery (Locked) -->
@@ -203,8 +203,8 @@
                         <i class="ph-fill ph-lock-key"></i>
                     </div>
                     <div>
-                        <h4 style="margin: 0 0 4px; font-size: 14px;">Mastery</h4>
-                        <p class="muted" style="margin: 0; font-size: 12px;">Complete all advanced challenges.</p>
+                        <h4 style="margin: 0 0 4px; font-size: 14px;">Maestría</h4>
+                    <p class="muted" style="margin: 0; font-size: 12px;">Completa todos los retos avanzados.</p>
                     </div>
                 </div>
             </div>
@@ -217,32 +217,32 @@
         <div class="modal-card" role="document">
             <div class="modal-header">
                 <div>
-                    <p class="eyebrow">Settings</p>
-                    <h2 id="account-title">Account Details</h2>
+                    <p class="eyebrow">Ajustes</p>
+                    <h2 id="account-title">Detalles de la cuenta</h2>
                 </div>
                 <button class="icon-button" type="button" aria-label="Cerrar" data-close="account">✕</button>
             </div>
 
             <div style="display: grid; gap: 16px; margin-top: 16px;">
                 <div>
-                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Full Name</label>
+                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Nombre completo</label>
                     <input type="text" value="Alex Harrison"
                         style="width: 100%; padding: 12px 14px; background: var(--gray-light); border: 1px solid var(--border-color); border-radius: 12px; font-family: inherit; font-size: 14px; color: var(--text-main);">
                 </div>
                 <div>
-                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Email Address</label>
+                    <label class="eyebrow" style="display: block; margin-bottom: 6px;">Correo electrónico</label>
                     <input type="email" value="alex.harrison@example.com"
                         style="width: 100%; padding: 12px 14px; background: var(--gray-light); border: 1px solid var(--border-color); border-radius: 12px; font-family: inherit; font-size: 14px; color: var(--text-main);">
                 </div>
                 <button class="cta" id="save-account-btn"
-                    style="width: 100%; justify-content: center; margin-top: 8px;">Save Changes</button>
+                    style="width: 100%; justify-content: center; margin-top: 8px;">Guardar cambios</button>
             </div>
         </div>
     </div>
 
     <!-- Subtitles Mock Banner -->
     <div class="subtitles-banner" aria-live="polite">
-        [Subtitles Enabled] - This is a simulation of active subtitles.
+        [Subtítulos activados] - Simulación de subtítulos activos.
     </div>
 
     <script src="../global-a11y.js"></script>

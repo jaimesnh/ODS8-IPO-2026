@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (saveAccountBtn) {
         saveAccountBtn.addEventListener('click', () => {
             triggerHaptic([30, 50, 30]);
-            alert('Settings saved successfully!');
+            alert('\u00a1Configuración guardada correctamente!');
             closeModal(accountModal);
         });
     }
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (editBtn) {
         editBtn.addEventListener('click', () => {
             triggerHaptic();
-            alert('Edit profile option clicked!');
+            openModal(accountModal);
         });
     }
 
@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (signOutBtn) {
         signOutBtn.addEventListener('click', () => {
             triggerHaptic([30, 50, 30]);
-            if (confirm('Are you sure you want to sign out?')) {
-                alert('Signed out successfully.');
+            if (confirm('¿Seguro que quieres cerrar sesión?')) {
+                alert('Sesión cerrada correctamente.');
             }
         });
     }
