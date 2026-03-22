@@ -94,8 +94,10 @@ body {
     position: absolute;
     bottom: 0;
     right: -4px;
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     background-color: var(--card);
     color: var(--orange-primary);
     border: none;
@@ -104,15 +106,22 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: 0 4px 12px rgba(17, 19, 26, 0.12);
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
+}
+
+.edit-btn:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
 }
 
 .edit-btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(17, 19, 26, 0.16);
 }
 
 .profile-info h1 {
@@ -169,6 +178,21 @@ body {
     text-decoration: none;
     background: none;
     border: none;
+    padding: 8px 8px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease, outline 0.2s ease;
+}
+
+.view-all:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.view-all:hover {
+    color: var(--accent-dark);
 }
 
 .badges-grid {
@@ -384,11 +408,18 @@ input:checked + .slider:before {
     text-align: left;
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
+    min-height: 56px;
+}
+
+.action-card:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
 }
 
 .action-card:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: 0 16px 30px rgba(22, 24, 32, 0.12);
 }
 
@@ -443,10 +474,24 @@ input:checked + .slider:before {
     font-size: 11px;
     cursor: pointer;
     text-decoration: none;
+    padding: 8px 12px;
+    min-width: 60px;
+    min-height: 48px;
+    transition: color 0.2s ease, outline 0.2s ease;
 }
 
-.nav-icon {
-    font-size: 16px;
+.nav-item:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.nav-item:hover {
+    color: var(--accent);
+}
+
+.nav-item.active {
+    color: var(--accent);
+}
     line-height: 1;
 }
 
@@ -512,8 +557,10 @@ body.subtitles-on .subtitles-banner {
     border: none;
     background: #fff;
     color: var(--ink);
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(17, 19, 26, 0.12);
     cursor: pointer;
@@ -521,7 +568,8 @@ body.subtitles-on .subtitles-banner {
     place-items: center;
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
 }
 
 .icon-button:focus-visible {
@@ -530,7 +578,8 @@ body.subtitles-on .subtitles-banner {
 }
 
 .icon-button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(17, 19, 26, 0.16);
 }
 
 .modal {

@@ -192,6 +192,131 @@
             </div>
         </div>
 
+        <!-- Modal: Guías de Derechos -->
+        <div class="modal" id="guides-modal" role="dialog" aria-modal="true" aria-labelledby="guides-title" hidden>
+            <div class="modal-backdrop" data-close="guides"></div>
+            <div class="modal-card" role="document">
+                <div class="modal-header">
+                    <h2 id="guides-title">Guías de Derechos</h2>
+                    <button class="icon-button" type="button" aria-label="Cerrar" data-close="guides">✕</button>
+                </div>
+                <div class="modal-content">
+                    <div class="guide-item">
+                        <h3>💰 Salario Mínimo</h3>
+                        <p>El salario mínimo interprofesional (SMI) en España es la cantidad mínima que un empleador debe pagar por hora trabajada. Se actualiza anualmente.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>⏰ Horario de Trabajo</h3>
+                        <p>En España, la jornada máxima es de 40 horas semanales. Tu empleador debe respetar descansos de 12 horas entre jornadas.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>📜 Tipos de Contrato</h3>
+                        <p>Los contratos pueden ser indefinidos, temporales, prácticas o aprendizaje. Revisa bien el tuyo antes de firmar.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>🏖️ Vacaciones y Descansos</h3>
+                        <p>Tienes derecho a 30 días de vacaciones pagadas anuales como mínimo. También derecho a descanso semanal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Recursos de Ayuda -->
+        <div class="modal" id="help-modal" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+            <div class="modal-backdrop" data-close="help"></div>
+            <div class="modal-card" role="document">
+                <div class="modal-header">
+                    <h2 id="help-title">Recursos de Ayuda</h2>
+                    <button class="icon-button" type="button" aria-label="Cerrar" data-close="help">✕</button>
+                </div>
+                <div class="modal-content">
+                    <div class="help-item">
+                        <h3>🆘 Inspección de Trabajo</h3>
+                        <p><strong>Teléfono:</strong> 012 (Opción 5)<br /><strong>Web:</strong> www.inspgg.es/itss<br />Denuncias anónimas de abusos laborales.</p>
+                    </div>
+                    <div class="help-item">
+                        <h3>⚖️ Sindicatos</h3>
+                        <p>Organizaciones que defienden derechos laborales:<br />• CCOO<br />• UGT<br />• USO</p>
+                    </div>
+                    <div class="help-item">
+                        <h3>📞 Línea de Atención</h3>
+                        <p><strong>Horario:</strong> De lunes a viernes, 9:00 - 18:00<br />Atención en español, inglés y árabe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Lectura Fácil -->
+        <div class="modal" id="easy-read-modal" role="dialog" aria-modal="true" aria-labelledby="easy-read-title" hidden>
+            <div class="modal-backdrop" data-close="easy-read"></div>
+            <div class="modal-card" role="document">
+                <div class="modal-header">
+                    <h2 id="easy-read-title">Versión en Lectura Fácil</h2>
+                    <button class="icon-button" type="button" aria-label="Cerrar" data-close="easy-read">✕</button>
+                </div>
+                <div class="modal-content easy-read-content">
+                    <h3>¿Qué es la explotación laboral?</h3>
+                    <p>Es cuando un jefe te trata mal en el trabajo.</p>
+
+                    <h3>Señales de alerta:</h3>
+                    <ul>
+                        <li>✓ Te pagan menos de lo acordado</li>
+                        <li>✓ Te obligan a trabajar más horas</li>
+                        <li>✓ No tienes contrato escrito</li>
+                        <li>✓ Te insultan o humillan</li>
+                        <li>✓ No te dejan descansar</li>
+                    </ul>
+
+                    <h3>¿Qué puedes hacer?</h3>
+                    <p><strong>1.</strong> Habla con tu jefe o un compañero de confianza.</p>
+                    <p><strong>2.</strong> Guarda pruebas (mensajes, contratos).</p>
+                    <p><strong>3.</strong> Llama a un sindicato o a la Inspección de Trabajo.</p>
+                    <p><strong>4.</strong> No estás solo. Existen leyes que te protegen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Bolsa de Trabajo Completa -->
+        <div class="modal" id="jobs-modal" role="dialog" aria-modal="true" aria-labelledby="jobs-modal-title" hidden>
+            <div class="modal-backdrop" data-close="jobs"></div>
+            <div class="modal-card" role="document">
+                <div class="modal-header">
+                    <h2 id="jobs-modal-title">Bolsa de Empleo Segura</h2>
+                    <button class="icon-button" type="button" aria-label="Cerrar" data-close="jobs">✕</button>
+                </div>
+                <div class="modal-content jobs-list" role="list" id="jobs-list">
+                    <!-- Empleos dinamicamente insertados por JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Detalles de Empleo -->
+        <div class="modal" id="job-detail-modal" role="dialog" aria-modal="true" aria-labelledby="job-detail-title" hidden>
+            <div class="modal-backdrop" data-close="job-detail"></div>
+            <div class="modal-card" role="document">
+                <div class="modal-header">
+                    <h2 id="job-detail-title" style="margin: 0"></h2>
+                    <button class="icon-button" type="button" aria-label="Cerrar" data-close="job-detail">✕</button>
+                </div>
+                <div class="modal-content" id="job-detail-content">
+                    <!-- Detalles dinamicos -->
+                </div>
+                <div style="padding: 20px; border-top: 1px solid #f0f0f0; display: flex; gap: 12px">
+                    <button class="cta" style="flex: 1" id="apply-job-btn" type="button">Solicitar</button>
+                    <button
+                        class="text-alt-link"
+                        type="button"
+                        onclick="
+                            document.getElementById('job-detail-modal').hidden = true;
+                            document.getElementById('jobs-modal').hidden = false;
+                            document.getElementById('jobs-list').querySelector('[data-apply-focus]').focus();
+                        ">
+                        Volver
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <script src="../global-a11y.js"></script>
         <script src="app.js"></script>
     </body>

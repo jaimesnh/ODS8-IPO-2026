@@ -239,17 +239,19 @@ body {
     background: var(--accent);
     color: #fff;
     border-radius: 14px;
-    padding: 11px 14px;
+    padding: 13px 18px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
     box-shadow: 0 14px 24px rgba(242, 101, 34, 0.35);
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    min-height: 44px;
 }
 
 .cta-icon {
@@ -257,7 +259,8 @@ body {
 }
 
 .cta:hover {
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 16px 28px rgba(242, 101, 34, 0.45);
 }
 
 .cta:focus-visible {
@@ -288,8 +291,23 @@ body {
     background: var(--accent-soft);
     color: var(--accent-dark);
     font-size: 11px;
-    padding: 8px 10px;
+    padding: 10px 14px;
     cursor: pointer;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    transition:
+        background-color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.chip:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.chip:hover:not(.muted) {
+    background-color: #ffe1d1;
 }
 
 .chip.muted {
@@ -367,7 +385,7 @@ body {
 .answer {
     border: 1px solid #e1e4ec;
     background: #fff;
-    padding: 12px 14px;
+    padding: 14px 16px;
     border-radius: 14px;
     display: flex;
     justify-content: space-between;
@@ -377,7 +395,14 @@ body {
     transition:
         border-color 0.2s ease,
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
+    min-height: 48px;
+}
+
+.answer:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
 }
 
 .answer[aria-checked="true"] {
@@ -437,14 +462,23 @@ body {
     background: none;
     border: none;
     width: 100%;
-    padding: 0;
+    padding: 12px 8px;
+    min-height: 44px;
     cursor: pointer;
+    transition:
+        color 0.2s ease,
+        outline 0.2s ease;
 }
 
 .swipe:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 3px;
     border-radius: 10px;
+    color: var(--accent);
+}
+
+.swipe:hover {
+    color: var(--accent);
 }
 
 .quickwins-card {
@@ -487,8 +521,25 @@ body {
     color: #d8561c;
     font-size: 11px;
     font-weight: 600;
-    padding: 6px 10px;
+    padding: 8px 14px;
     cursor: pointer;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    transition:
+        background-color 0.2s ease,
+        outline 0.2s ease,
+        transform 0.2s ease;
+}
+
+.quickwin-xp:focus-visible {
+    outline: 2px solid #d8561c;
+    outline-offset: 2px;
+}
+
+.quickwin-xp:hover {
+    background-color: #ffc7ad;
+    transform: translateY(-1px);
 }
 
 .quickwin-claimed {

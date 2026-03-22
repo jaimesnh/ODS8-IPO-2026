@@ -102,8 +102,10 @@ body {
 .icon-button {
     border: none;
     background: transparent;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 50%;
     cursor: pointer;
     display: grid;
@@ -111,6 +113,19 @@ body {
     position: relative;
     font-size: 22px;
     color: var(--ink);
+    transition:
+        background-color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.icon-button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    background-color: rgba(17, 19, 26, 0.05);
+}
+
+.icon-button:hover {
+    background-color: rgba(17, 19, 26, 0.08);
 }
 
 .notif-dot {
@@ -292,6 +307,20 @@ body {
     align-items: center;
     gap: 3px;
     font-family: inherit;
+    padding: 8px 8px;
+    min-height: 44px;
+    transition:
+        color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.link:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.link:hover {
+    color: var(--accent-dark);
 }
 
 .facts {
@@ -446,8 +475,10 @@ body {
 
 .share-btn {
     border: none;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.32);
     backdrop-filter: blur(6px);
@@ -456,6 +487,21 @@ body {
     display: grid;
     place-items: center;
     cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        outline 0.2s ease,
+        transform 0.2s ease;
+}
+
+.share-btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.share-btn:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+    transform: scale(1.05);
 }
 
 .play-button {
@@ -463,8 +509,10 @@ body {
     left: 50%;
     top: 52%;
     transform: translate(-50%, -50%);
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
     border: none;
     border-radius: 50%;
     background: var(--accent);
@@ -475,6 +523,20 @@ body {
     place-items: center;
     cursor: pointer;
     box-shadow: 0 8px 28px rgba(242, 101, 34, 0.48);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
+}
+
+.play-button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 3px;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 10px 32px rgba(242, 101, 34, 0.58);
 }
 
 .play-button i {
@@ -496,12 +558,29 @@ body {
     border: none;
     background: transparent;
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1;
-    padding: 0;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
     display: grid;
     place-items: center;
     cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.side-action:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-action:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .side-count {
@@ -532,11 +611,30 @@ body {
     background: rgba(0, 0, 0, 0.36);
     color: #f7f8fa;
     border-radius: 999px;
-    padding: 6px 10px;
+    padding: 10px 16px;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 10px;
     cursor: pointer;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.story-alt-btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.story-alt-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .tags {
@@ -581,7 +679,7 @@ body {
 .quiz-btn {
     border: none;
     border-radius: 10px;
-    padding: 11px 16px;
+    padding: 12px 20px;
     color: var(--accent);
     background: #fff;
     font-size: 14px;
@@ -590,6 +688,23 @@ body {
     cursor: pointer;
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        outline 0.2s ease;
+}
+
+.quiz-btn:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 .bottom-nav {
@@ -615,8 +730,22 @@ body {
     color: var(--nav-muted);
     cursor: pointer;
     text-decoration: none;
-    padding: 0 4px;
+    padding: 8px 12px;
     font-family: inherit;
+    min-width: 60px;
+    min-height: 48px;
+    transition:
+        color 0.2s ease,
+        outline 0.2s ease;
+}
+
+.nav-item:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.nav-item:hover {
+    color: var(--accent);
 }
 
 .nav-icon {
