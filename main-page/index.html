@@ -1,153 +1,210 @@
 <!doctype html>
 <html lang="es" data-theme="sunrise">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light" />
+        <title>Inicio - ODS 8</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <title>Inicio - ODS 8</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
-
-<body>
-    <div class="app" role="application" aria-label="Inicio ODS 8">
-        <header class="app-header">
-            <div class="brand">
-                <div class="brand-icon" aria-hidden="true">
-                    <i class="ph-fill ph-chart-bar"></i>
+    <body>
+        <div class="app" role="application" aria-label="Inicio ODS 8">
+            <header class="app-header">
+                <div class="brand">
+                    <div class="brand-icon" aria-hidden="true">
+                        <i class="ph-fill ph-chart-bar"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">Resumen Semanal</span>
+                        <span class="brand-subtitle">ODS 8: TRABAJO DECENTE</span>
+                    </div>
                 </div>
-                <div class="brand-text">
-                    <span class="brand-title">Resumen Semanal</span>
-                    <span class="brand-subtitle">ODS 8: TRABAJO DECENTE</span>
+                <button class="icon-button" type="button" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <span class="notif-dot" aria-hidden="true"></span>
+                </button>
+            </header>
+
+            <main class="content" id="main-content">
+                <section class="card trend-card" aria-labelledby="trend-title" aria-describedby="trend-alt">
+                    <div class="trend-top">
+                        <div>
+                            <p class="trend-label">Tendencia de desempleo juvenil</p>
+                            <div class="trend-stats">
+                                <h2 id="trend-title">-2.4%</h2>
+                                <p class="trend-delta">↘Este mes</p>
+                            </div>
+                        </div>
+                        <span class="live-chip"><span class="live-dot"></span>DATOS EN VIVO</span>
+                    </div>
+
+                    <div class="chart-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 320 118" class="trend-chart" preserveAspectRatio="none">
+                            <path class="chart-fill" d="M0,96 C35,88 62,88 92,95 C128,103 146,88 172,64 C199,42 226,42 252,72 C273,96 293,106 320,47 L320,118 L0,118 Z" />
+                            <path class="chart-line" d="M0,96 C35,88 62,88 92,95 C128,103 146,88 172,64 C199,42 226,42 252,72 C273,96 293,106 320,47" />
+                            <circle cx="320" cy="47" r="4" class="chart-point" />
+                        </svg>
+                    </div>
+
+                    <div class="chart-days" aria-hidden="true">
+                        <span>LUN</span>
+                        <span>MIÉ</span>
+                        <span>VIE</span>
+                        <span>DOM</span>
+                    </div>
+                    <p id="trend-alt" class="sr-only">Resumen del gráfico: la tasa de desempleo juvenil muestra una bajada general del 2.4 por ciento durante esta semana, con una leve subida intermedia y cierre en su punto más bajo.</p>
+                </section>
+
+                <section class="facts" aria-labelledby="facts-title">
+                    <div class="section-header">
+                        <h3 id="facts-title" class="facts-title">DATOS RÁPIDOS DE IA Y EMPLEO</h3>
+                        <button class="link" type="button">Desliza para ver más <i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="facts-row" role="list">
+                        <article class="fact-pill" role="listitem">
+                            <span class="fact-icon orange" aria-hidden="true"><i class="ph-fill ph-robot"></i></span>
+                            <p><strong>85M</strong> empleos desplazados para 2025</p>
+                        </article>
+                        <article class="fact-pill" role="listitem">
+                            <span class="fact-icon green" aria-hidden="true"><i class="ph-fill ph-check-circle"></i></span>
+                            <p><strong>97M</strong> nuevos roles de IA creados</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="stories" aria-labelledby="stories-title">
+                    <div class="section-header stories-header">
+                        <h3 id="stories-title">
+                            <span class="play-tag" aria-hidden="true"><i class="ph-fill ph-play"></i></span> Historias reales
+                        </h3>
+                    </div>
+
+                    <article class="story-card">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="Joven profesional sonriendo" class="story-image" />
+                        <div class="story-overlay"></div>
+
+                        <div class="story-head">
+                            <span class="creator"><span class="creator-avatar" aria-hidden="true"></span>@sarah_dev</span>
+                            <button class="share-btn" type="button" aria-label="Compartir"><i class="ph ph-share-network"></i></button>
+                        </div>
+
+                        <button class="play-button" type="button" aria-label="Reproducir historia" aria-describedby="story-access-note"><i class="ph-fill ph-play"></i></button>
+
+                        <div class="story-actions" aria-label="Interacciones">
+                            <button type="button" class="side-action" aria-label="Me gusta"><i class="ph ph-heart"></i></button>
+                            <span class="side-count">12.4k</span>
+                            <button type="button" class="side-action" aria-label="Comentarios"><i class="ph ph-chat"></i></button>
+                            <span class="side-count">842</span>
+                            <button type="button" class="side-action" aria-label="Guardar"><i class="ph ph-bookmark-simple"></i></button>
+                            <span class="side-count">2k</span>
+                        </div>
+
+                        <div class="story-info">
+                            <h4>Cómo conseguí mi primer trabajo como desarrolladora usando IA.</h4>
+                            <p id="story-access-note" class="sr-only">Este contenido audiovisual dispone de una alternativa textual y resumen accesible.</p>
+                            <button class="story-alt-btn" type="button" id="open-media-alt" aria-haspopup="dialog" aria-controls="media-alt-panel">Leer transcripción y alternativas</button>
+                            <div class="tags">
+                                <span>#CARRERA</span>
+                                <span>#AI</span>
+                                <span>#ODS8</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="challenge-banner" aria-label="Reto destacado">
+                    <div>
+                        <h3>¿Lista para un reto?</h3>
+                        <p>Demuestra tus habilidades en IA y consigue insignias.</p>
+                    </div>
+                    <button class="quiz-btn" type="button">Hacer quiz</button>
+                </section>
+            </main>
+
+            <nav class="bottom-nav" aria-label="Principal">
+                <button class="nav-item active" type="button" aria-label="Inicio" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span class="nav-label">Inicio</span>
+                </button>
+                <a href="../actions and tools/index.html" class="nav-item" aria-label="Acción" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">◎</span>
+                    <span class="nav-label">Acción</span>
+                </a>
+                <a href="../challenges/index.html" class="nav-item" aria-label="Retos" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">◉</span>
+                    <span class="nav-label">Retos</span>
+                </a>
+                <a href="../profile/index.html" class="nav-item" aria-label="Perfil" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">☺</span>
+                    <span class="nav-label">Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="notif-panel" id="notif-panel" hidden role="dialog" aria-modal="true" aria-label="Notificaciones">
+            <div class="notif-backdrop" id="notif-backdrop"></div>
+            <div class="notif-card">
+                <div class="notif-header">
+                    <h3>Notificaciones</h3>
+                    <button class="icon-button" type="button" id="notif-close" aria-label="Cerrar notificaciones">✕</button>
+                </div>
+                <ul class="notif-list" role="list">
+                    <li class="notif-item unread" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">🏆</span>
+                        <div class="notif-body">
+                            <p class="notif-text">¡Nuevo reto semanal disponible! <strong>Green CEO</strong></p>
+                            <p class="notif-time">Hace 2 horas</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">⭐</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Conseguiste la insignia <strong>Primera trivia</strong></p>
+                            <p class="notif-time">Hace 1 día</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">📢</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Tu amigo Alex también juega al ODS 8</p>
+                            <p class="notif-time">Hace 3 días</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">🎯</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Completaste 3 trivias seguidas esta semana</p>
+                            <p class="notif-time">Hace 5 días</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="media-alt-panel" id="media-alt-panel" hidden role="dialog" aria-modal="true" aria-labelledby="media-alt-title">
+            <div class="media-alt-backdrop" id="media-alt-backdrop"></div>
+            <div class="media-alt-card" role="document">
+                <div class="media-alt-header">
+                    <h3 id="media-alt-title">Alternativa accesible del contenido</h3>
+                    <button class="icon-button" type="button" id="media-alt-close" aria-label="Cerrar alternativas de contenido">✕</button>
+                </div>
+                <div class="media-alt-content">
+                    <h4>Transcripción breve</h4>
+                    <p>"Antes me costaba conseguir entrevistas. Aprendí herramientas de IA para mejorar mi CV, preparar respuestas y practicar casos reales. En dos meses logré mi primer trabajo junior en desarrollo."</p>
+                    <h4>Descripción de audio</h4>
+                    <p>Se muestra a una joven profesional sonriendo en un entorno urbano. Sobre la imagen aparecen botones de reproducción, compartir y métricas de interacción social.</p>
                 </div>
             </div>
-            <button class="icon-button" type="button" aria-label="Notificaciones">
-                <i class="ph ph-bell" aria-hidden="true"></i>
-                <span class="notif-dot" aria-hidden="true"></span>
-            </button>
-        </header>
+        </div>
 
-        <main class="content" id="main-content">
-            <section class="card trend-card" aria-labelledby="trend-title">
-                <div class="trend-top">
-                    <div>
-                        <p class="trend-label">Tendencia de desempleo juvenil</p>
-                        <div class="trend-stats">
-                            <h2 id="trend-title">-2.4%</h2>
-                            <p class="trend-delta">↘Este mes</p>
-                        </div>
-                    </div>
-                    <span class="live-chip"><span class="live-dot"></span>DATOS EN VIVO</span>
-                </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-                <div class="chart-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 320 118" class="trend-chart" preserveAspectRatio="none">
-                        <path class="chart-fill"
-                            d="M0,96 C35,88 62,88 92,95 C128,103 146,88 172,64 C199,42 226,42 252,72 C273,96 293,106 320,47 L320,118 L0,118 Z" />
-                        <path class="chart-line"
-                            d="M0,96 C35,88 62,88 92,95 C128,103 146,88 172,64 C199,42 226,42 252,72 C273,96 293,106 320,47" />
-                        <circle cx="320" cy="47" r="4" class="chart-point" />
-                    </svg>
-                </div>
-
-                <div class="chart-days" aria-hidden="true">
-                    <span>LUN</span>
-                    <span>MIÉ</span>
-                    <span>VIE</span>
-                    <span>DOM</span>
-                </div>
-            </section>
-
-            <section class="facts" aria-labelledby="facts-title">
-                <div class="section-header">
-                    <h3 id="facts-title" class="facts-title">DATOS RÁPIDOS DE IA Y EMPLEO</h3>
-                    <button class="link" type="button">Desliza para ver más <i class="ph ph-arrow-right" aria-hidden="true"></i></button>
-                </div>
-                <div class="facts-row" role="list">
-                    <article class="fact-pill" role="listitem">
-                        <span class="fact-icon orange" aria-hidden="true"><i class="ph-fill ph-robot"></i></span>
-                        <p><strong>85M</strong> empleos desplazados para 2025</p>
-                    </article>
-                    <article class="fact-pill" role="listitem">
-                        <span class="fact-icon green" aria-hidden="true"><i class="ph-fill ph-check-circle"></i></span>
-                        <p><strong>97M</strong> nuevos roles de IA creados</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="stories" aria-labelledby="stories-title">
-                <div class="section-header stories-header">
-                    <h3 id="stories-title"><span class="play-tag" aria-hidden="true"><i class="ph-fill ph-play"></i></span> Historias reales</h3>
-                </div>
-
-                <article class="story-card">
-                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80"
-                        alt="Joven profesional sonriendo" class="story-image" />
-                    <div class="story-overlay"></div>
-
-                    <div class="story-head">
-                        <span class="creator"><span class="creator-avatar" aria-hidden="true"></span>@sarah_dev</span>
-                        <button class="share-btn" type="button" aria-label="Compartir"><i class="ph ph-share-network"></i></button>
-                    </div>
-
-                    <button class="play-button" type="button" aria-label="Reproducir historia"><i class="ph-fill ph-play"></i></button>
-
-                    <div class="story-actions" aria-label="Interacciones">
-                        <button type="button" class="side-action" aria-label="Me gusta"><i class="ph ph-heart"></i></button>
-                        <span class="side-count">12.4k</span>
-                        <button type="button" class="side-action" aria-label="Comentarios"><i class="ph ph-chat"></i></button>
-                        <span class="side-count">842</span>
-                        <button type="button" class="side-action" aria-label="Guardar"><i class="ph ph-bookmark-simple"></i></button>
-                        <span class="side-count">2k</span>
-                    </div>
-
-                    <div class="story-info">
-                        <h4>Cómo conseguí mi primer trabajo como desarrolladora usando IA.</h4>
-                        <div class="tags">
-                            <span>#CARRERA</span>
-                            <span>#AI</span>
-                            <span>#ODS8</span>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <section class="challenge-banner" aria-label="Reto destacado">
-                <div>
-                    <h3>¿Lista para un reto?</h3>
-                    <p>Demuestra tus habilidades en IA y consigue insignias.</p>
-                </div>
-                <button class="quiz-btn" type="button">Hacer quiz</button>
-            </section>
-        </main>
-
-        <nav class="bottom-nav" aria-label="Principal">
-            <button class="nav-item active" type="button" aria-label="Inicio" aria-current="page">
-                <span class="nav-icon" aria-hidden="true">⌂</span>
-                <span class="nav-label">INICIO</span>
-            </button>
-            <a href="../actions and tools/index.html" class="nav-item" aria-label="Acción" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">◎</span>
-                <span class="nav-label">ACCIÓN</span>
-            </a>
-            <a href="../challenges/index.html" class="nav-item" aria-label="Retos" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">◉</span>
-                <span class="nav-label">RETOS</span>
-            </a>
-            <a href="../profile/index.html" class="nav-item" aria-label="Perfil" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">☺</span>
-                <span class="nav-label">PERFIL</span>
-            </a>
-        </nav>
-    </div>
-
-    <script src="../global-a11y.js"></script>
-</body>
-
+        <script src="../global-a11y.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>

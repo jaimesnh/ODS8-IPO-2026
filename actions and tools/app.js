@@ -11,11 +11,13 @@ const i18n = {
         "actionCenter.tools": "3 HERRAMIENTAS DISPONIBLES",
         "rights.title": "Tus Derechos",
         "rights.badge": "ESENCIAL",
+        "rights.imageAlt": "Imagen simbólica sobre empoderamiento laboral para representar el acceso a derechos y recursos de protección.",
         "rights.description": "Conoce tu valor. Accede a guías sobre salario mínimo, periodos de descanso y contratos básicos.",
         "rights.cta": "Explorar Guías",
         "alert.title": "Guía Anti-Explotación",
         "alert.description": "Detecta las señales. Aprende a identificar y denunciar de forma segura abusos laborales o violaciones de seguridad.",
         "alert.cta": "Obtener Ayuda",
+        "alert.easyRead": "Leer versión en texto fácil",
         "jobs.title": "Bolsa de Trabajo Segura",
         "jobs.viewAll": "Ver todo",
         "jobs.job1.title": "Barista",
@@ -24,13 +26,14 @@ const i18n = {
         "jobs.job2.details": "Local Express · Flexible",
         "jobs.verified": "VERIFICADO",
         "jobs.new": "NUEVO",
-        "tip.text": "Consejo: Siempre guarda una copia de tu contrato firmado en un lugar seguro. Usa nuestra herramienta \"Bóveda\" para guardar fotos del mismo.",
+        "tip.text": 'Consejo: Siempre guarda una copia de tu contrato firmado en un lugar seguro. Usa nuestra herramienta "Bóveda" para guardar fotos del mismo.',
         "nav.home": "Inicio",
         "nav.action": "Acción",
         "nav.challenges": "Retos",
         "nav.profile": "Perfil",
         "toast.help": "Redirigiendo a recursos de ayuda...",
         "toast.guides": "Abriendo guías de derechos...",
+        "toast.easyRead": "Abriendo guía en lectura fácil y formato compatible con lector de pantalla...",
     },
     en: {
         "header.title": "Knowledge is Power",
@@ -40,11 +43,13 @@ const i18n = {
         "actionCenter.tools": "3 TOOLS AVAILABLE",
         "rights.title": "Your Rights",
         "rights.badge": "ESSENTIAL",
+        "rights.imageAlt": "Symbolic image about labor empowerment representing access to rights and worker protection resources.",
         "rights.description": "Know your worth. Access guides on minimum wage, rest periods, and contract basics.",
         "rights.cta": "Explore Guides",
         "alert.title": "Anti-Exploitation Guide",
         "alert.description": "Spot the signs. Learn how to identify and safely report workplace abuse or safety violations.",
         "alert.cta": "Get Help Now",
+        "alert.easyRead": "Read easy-text version",
         "jobs.title": "Safe Job Board",
         "jobs.viewAll": "View All",
         "jobs.job1.title": "Barista",
@@ -53,13 +58,14 @@ const i18n = {
         "jobs.job2.details": "Local Express · Flexible",
         "jobs.verified": "VERIFIED",
         "jobs.new": "NEW",
-        "tip.text": "Tip: Always keep a copy of your signed contract in a safe place. Use our \"Vault\" tool to store photos of it.",
+        "tip.text": 'Tip: Always keep a copy of your signed contract in a safe place. Use our "Vault" tool to store photos of it.',
         "nav.home": "Home",
         "nav.action": "Action",
         "nav.challenges": "Challenges",
         "nav.profile": "Profile",
         "toast.help": "Redirecting to help resources...",
         "toast.guides": "Opening rights guides...",
+        "toast.easyRead": "Opening easy-read guide and screen-reader friendly format...",
     },
 };
 
@@ -68,6 +74,12 @@ const toast = document.getElementById("toast");
 const exploreBtn = document.getElementById("explore-guides");
 const helpBtn = document.getElementById("get-help");
 const searchInput = document.querySelector(".search-input");
+const bellButton = document.querySelector('.icon-button[aria-label="Notificaciones"]');
+const notifPanel = document.getElementById("notif-panel");
+const notifClose = document.getElementById("notif-close");
+const notifBackdrop = document.getElementById("notif-backdrop");
+const jobsViewAllBtn = document.querySelector('.link[data-i18n="jobs.viewAll"]');
+const easyReadBtn = document.getElementById("open-easy-read");
 
 /* ── i18n ── */
 function setLocale(locale) {
@@ -108,6 +120,13 @@ if (helpBtn) {
     });
 }
 
+if (easyReadBtn) {
+    easyReadBtn.addEventListener("click", () => {
+        const dict = i18n[state.locale];
+        showToast(dict["toast.easyRead"]);
+    });
+}
+
 /* ── Search interaction ── */
 if (searchInput) {
     searchInput.addEventListener("keydown", (e) => {
@@ -118,6 +137,40 @@ if (searchInput) {
                 showToast(`Searching: "${query}"`);
             }
         }
+    });
+}
+
+if (jobsViewAllBtn) {
+    jobsViewAllBtn.addEventListener("click", () => {
+        const msg = state.locale === "es" ? "Mostrando más ofertas" : "Showing more offers";
+        showToast(msg);
+    });
+}
+
+function openNotifPanel() {
+    notifPanel.hidden = false;
+    notifClose.focus();
+}
+
+function closeNotifPanel() {
+    notifPanel.hidden = true;
+    bellButton.focus();
+}
+
+if (bellButton && notifPanel && notifClose && notifBackdrop) {
+    bellButton.addEventListener("click", () => {
+        if (notifPanel.hidden) {
+            openNotifPanel();
+        } else {
+            closeNotifPanel();
+        }
+    });
+
+    notifClose.addEventListener("click", closeNotifPanel);
+    notifBackdrop.addEventListener("click", closeNotifPanel);
+
+    notifPanel.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeNotifPanel();
     });
 }
 

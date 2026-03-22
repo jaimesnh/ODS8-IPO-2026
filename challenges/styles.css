@@ -122,7 +122,9 @@ body {
     cursor: pointer;
     display: grid;
     place-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .icon-button:focus-visible {
@@ -132,6 +134,37 @@ body {
 
 .icon-button:hover {
     transform: translateY(-1px);
+}
+
+.app-header .icon-button {
+    border: none;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-size: 22px;
+    color: var(--ink);
+    box-shadow: none;
+}
+
+.app-header .icon-button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.app-header .notif-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--card);
+    position: absolute;
+    top: 5px;
+    right: 4px;
 }
 
 .pill {
@@ -210,7 +243,9 @@ body {
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     box-shadow: 0 14px 24px rgba(242, 101, 34, 0.35);
     display: inline-flex;
     align-items: center;
@@ -339,13 +374,38 @@ body {
     align-items: center;
     font-weight: 600;
     cursor: pointer;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .answer[aria-checked="true"] {
     border-color: var(--accent);
     box-shadow: 0 12px 20px rgba(242, 101, 34, 0.2);
     background: var(--accent-soft);
+}
+
+.answer.is-correct {
+    border-color: #1f9d55;
+    background: #e8f8ee;
+    box-shadow: 0 10px 20px rgba(31, 157, 85, 0.2);
+}
+
+.answer.is-incorrect {
+    border-color: #c1121f;
+    background: #fdecef;
+    box-shadow: 0 10px 20px rgba(193, 18, 31, 0.15);
+}
+
+.answer.is-revealed {
+    border-color: #1f9d55;
+    border-style: dashed;
+}
+
+.answer:disabled {
+    cursor: default;
+    opacity: 1;
 }
 
 .answer:hover {
@@ -357,6 +417,16 @@ body {
     min-height: 20px;
     font-size: 12px;
     color: var(--muted);
+}
+
+.hint.hint-success {
+    color: #1f9d55;
+    font-weight: 600;
+}
+
+.hint.hint-error {
+    color: #c1121f;
+    font-weight: 600;
 }
 
 .swipe {
@@ -450,7 +520,6 @@ body {
     box-shadow: 0 -8px 24px rgba(22, 24, 32, 0.08);
 }
 
-
 .nav-item {
     border: none;
     background: none;
@@ -487,7 +556,9 @@ body {
     box-shadow: var(--shadow);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .toast.show {
@@ -645,22 +716,40 @@ body {
 
     .app {
         border-radius: 26px;
+    }
+}
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                scroll-behavior: auto !important;
-                transition: none !important;
-                animation: none !important;
-            }
-        }
-
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 }
 
 /* --- Accessibility Modes --- */
 
 body.large-text {
-    font-size: 110%;
+    font-size: 124%;
+}
+
+body.large-text .content {
+    padding-bottom: 124px;
+}
+
+body.large-text .section-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+body.large-text .hero-body {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+body.large-text .hero-body .cta {
+    width: 100%;
+    justify-content: center;
 }
 
 body.large-text .brand-title {
@@ -687,6 +776,44 @@ body.large-text .quiz h4 {
     font-size: 18px;
 }
 
+body.large-text .quiz-tag,
+body.large-text .quiz-counter,
+body.large-text .answer,
+body.large-text .answer .muted,
+body.large-text .hint,
+body.large-text .quickwin-body .muted,
+body.large-text .quickwin-claimed,
+body.large-text .modal-text,
+body.large-text .step-tag,
+body.large-text .meter-value,
+body.large-text .law-item p,
+body.large-text .notif-text,
+body.large-text .notif-time {
+    font-size: 14px;
+}
+
+body.large-text .answers {
+    grid-template-columns: 1fr;
+}
+
+body.large-text .cta,
+body.large-text .swipe,
+body.large-text .chip,
+body.large-text .quickwin-xp,
+body.large-text .step-choice,
+body.large-text .law-link,
+body.large-text .modal-header .eyebrow,
+body.large-text .hero-badge {
+    font-size: 13px;
+}
+
+body.large-text .modal-header h2,
+body.large-text .step-title,
+body.large-text .sim-result h3,
+body.large-text .law-item h4 {
+    font-size: 20px;
+}
+
 body.large-text .quickwin-body h4 {
     font-size: 16px;
 }
@@ -695,18 +822,22 @@ body.large-text .nav-label {
     font-size: 12px;
 }
 
+body.large-text .bottom-nav {
+    padding: 12px 0 14px;
+}
+
 /* ── Alto contraste ──────────────────────────────── */
 
 body.high-contrast {
     --bg: #0d1117;
     --card: #161b22;
     --ink: #f0f6fc;
-    --muted: #8b949e;
+    --muted: #b8c2cf;
     --accent: #ff7b00;
     --accent-dark: #ff9f1a;
     --accent-soft: #2d1800;
     --nav: #161b22;
-    --nav-muted: #8b949e;
+    --nav-muted: #b8c2cf;
     --ring: #58a6ff;
     /* El fondo exterior (fuera del móvil) no cambia */
 }
@@ -742,6 +873,20 @@ body.high-contrast .answer {
     background: #21262d;
     border-color: #30363d;
     color: var(--ink);
+}
+
+body.high-contrast .answer.is-correct {
+    background: #0f2a1a;
+    border-color: #2ea043;
+}
+
+body.high-contrast .answer.is-incorrect {
+    background: #3a1217;
+    border-color: #f85149;
+}
+
+body.high-contrast .answer.is-revealed {
+    border-color: #2ea043;
 }
 
 body.high-contrast .answer[aria-checked="true"] {
@@ -786,6 +931,14 @@ body.high-contrast .step-choice {
 
 body.high-contrast .meter-track {
     background: #21262d;
+}
+
+body.high-contrast .hint.hint-success {
+    color: #3fb950;
+}
+
+body.high-contrast .hint.hint-error {
+    color: #ff7b72;
 }
 
 body.high-contrast .link {
@@ -1037,6 +1190,12 @@ body.high-contrast .law-link {
 }
 
 @keyframes levelup-pop {
-    from { opacity: 0; transform: scale(0.7); }
-    to   { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

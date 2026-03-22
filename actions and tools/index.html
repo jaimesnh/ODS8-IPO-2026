@@ -1,165 +1,198 @@
 <!doctype html>
 <html lang="es" data-theme="sunrise">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light" />
+        <title>Acción - El Conocimiento es Poder</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <title>Acción - El Conocimiento es Poder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-    <div class="app" role="application" aria-label="Centro de Acción">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="brand">
-                <div class="brand-icon" aria-hidden="true">⚡</div>
-                <div class="brand-text">
-                    <span class="brand-title" data-i18n="header.title">El Conocimiento es Poder</span>
-                    <span class="brand-subtitle" data-i18n="header.subtitle">Empoderando tu vida laboral</span>
+    <body>
+        <div class="app" role="application" aria-label="Centro de Acción">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="brand">
+                    <div class="brand-icon" aria-hidden="true">⚡</div>
+                    <div class="brand-text">
+                        <span class="brand-title" data-i18n="header.title">El Conocimiento es Poder</span>
+                        <span class="brand-subtitle" data-i18n="header.subtitle">Empoderando tu vida laboral</span>
+                    </div>
                 </div>
+                <button class="icon-button" type="button" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <span class="notif-dot" aria-hidden="true"></span>
+                </button>
+            </header>
+
+            <main class="content" id="main-content">
+                <!-- Search Bar -->
+                <div class="search-bar" role="search">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="text" class="search-input" placeholder="Busca derechos, guías o empleos..." aria-label="Buscar derechos, guías o empleos" data-i18n-placeholder="search.placeholder" />
+                </div>
+
+                <!-- Action Center Header -->
+                <div class="section-header action-center-header">
+                    <h2 class="section-title" data-i18n="actionCenter.title">Centro de Acción</h2>
+                    <span class="tools-badge" data-i18n="actionCenter.tools">3 HERRAMIENTAS DISPONIBLES</span>
+                </div>
+
+                <!-- Your Rights Card -->
+                <section class="card rights-card" aria-labelledby="rights-title" aria-describedby="rights-image-alt">
+                    <div class="rights-image" role="img" aria-label="Ilustración de derechos laborales y protección en el trabajo">
+                        <div class="rights-image-overlay"></div>
+                        <div class="rights-icon">⚡</div>
+                    </div>
+                    <div class="rights-body">
+                        <div class="rights-header">
+                            <h3 id="rights-title" data-i18n="rights.title">Tus Derechos</h3>
+                            <span class="badge essential" data-i18n="rights.badge">ESENCIAL</span>
+                        </div>
+                        <p id="rights-image-alt" class="sr-only" data-i18n="rights.imageAlt">Imagen simbólica sobre empoderamiento laboral para representar el acceso a derechos y recursos de protección.</p>
+                        <p class="muted" data-i18n="rights.description">Conoce tus derechos. Accede a guías sobre salario mínimo, descansos y contratos.</p>
+                        <button class="explore-btn" type="button" id="explore-guides">
+                            <span data-i18n="rights.cta">Explorar Guías</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Anti-Exploitation Guide -->
+                <section class="card alert-card" aria-labelledby="alert-title">
+                    <div class="alert-icon" aria-hidden="true">
+                        <span>🛡️</span>
+                    </div>
+                    <div class="alert-body">
+                        <h3 id="alert-title" data-i18n="alert.title">Guía contra la Explotación</h3>
+                        <p data-i18n="alert.description">Identifica las señales. Aprende a detectar y denunciar abusos laborales de forma segura.</p>
+                        <button class="cta alert-cta" type="button" id="get-help">
+                            <span data-i18n="alert.cta">Obtener ayuda ahora</span>
+                        </button>
+                        <button class="text-alt-link" type="button" id="open-easy-read" data-i18n="alert.easyRead">Leer versión en texto fácil</button>
+                    </div>
+                </section>
+
+                <!-- Safe Job Board -->
+                <section class="section" aria-labelledby="jobs-title">
+                    <div class="section-header">
+                        <div class="jobs-header-left">
+                            <span class="jobs-icon" aria-hidden="true">💼</span>
+                            <h3 id="jobs-title" data-i18n="jobs.title">Bolsa de Empleo Segura</h3>
+                        </div>
+                        <button class="link" type="button" data-i18n="jobs.viewAll">Ver todo</button>
+                    </div>
+
+                    <div class="card jobs-card">
+                        <!-- Job 1 -->
+                        <div class="job-item" role="listitem">
+                            <div class="job-avatar" style="background: #fce4ec">
+                                <span style="color: #e91e63; font-weight: 700">B</span>
+                            </div>
+                            <div class="job-info">
+                                <h4 data-i18n="jobs.job1.title">Barista</h4>
+                                <p class="muted" data-i18n="jobs.job1.details">Café Centro · Jornada completa</p>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-salary">$18/hr</span>
+                                <span class="job-tag verified" data-i18n="jobs.verified">VERIFICADO</span>
+                            </div>
+                        </div>
+
+                        <div class="job-divider" aria-hidden="true"></div>
+
+                        <!-- Job 2 -->
+                        <div class="job-item" role="listitem">
+                            <div class="job-avatar" style="background: #fff3e0">
+                                <span style="color: #e65100; font-weight: 700">D</span>
+                            </div>
+                            <div class="job-info">
+                                <h4 data-i18n="jobs.job2.title">Repartidor</h4>
+                                <p class="muted" data-i18n="jobs.job2.details">Local Express · Flexible</p>
+                            </div>
+                            <div class="job-meta">
+                                <span class="job-salary">$22/hr</span>
+                                <span class="job-tag new" data-i18n="jobs.new">NUEVO</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tip Banner -->
+                <section class="tip-banner" aria-label="Tip">
+                    <div class="tip-icon" aria-hidden="true">💡</div>
+                    <p class="tip-text" data-i18n="tip.text"><strong>Consejo:</strong> Guarda siempre una copia de tu contrato firmado en un lugar seguro. Usa nuestra herramienta «Vault» para guardar fotos.</p>
+                </section>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav" aria-label="Principal">
+                <a href="../main-page/index.html" class="nav-item" aria-label="Inicio" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">⌂</span>
+                    <span class="nav-label" data-i18n="nav.home">Inicio</span>
+                </a>
+                <button class="nav-item active" type="button" aria-label="Acción" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">◎</span>
+                    <span class="nav-label" data-i18n="nav.action">Acción</span>
+                </button>
+                <a href="../challenges/index.html" class="nav-item" aria-label="Retos" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">◉</span>
+                    <span class="nav-label" data-i18n="nav.challenges">Retos</span>
+                </a>
+                <a href="../profile/index.html" class="nav-item" aria-label="Perfil" style="text-decoration: none">
+                    <span class="nav-icon" aria-hidden="true">☺</span>
+                    <span class="nav-label" data-i18n="nav.profile">Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+        <div class="notif-panel" id="notif-panel" hidden role="dialog" aria-modal="true" aria-label="Notificaciones">
+            <div class="notif-backdrop" id="notif-backdrop"></div>
+            <div class="notif-card">
+                <div class="notif-header">
+                    <h3>Notificaciones</h3>
+                    <button class="icon-button" type="button" id="notif-close" aria-label="Cerrar notificaciones">✕</button>
+                </div>
+                <ul class="notif-list" role="list">
+                    <li class="notif-item unread" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">🏆</span>
+                        <div class="notif-body">
+                            <p class="notif-text">¡Nuevo reto semanal disponible! <strong>Green CEO</strong></p>
+                            <p class="notif-time">Hace 2 horas</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">⭐</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Conseguiste la insignia <strong>Primera trivia</strong></p>
+                            <p class="notif-time">Hace 1 día</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">📢</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Tu amigo Alex también juega al ODS 8</p>
+                            <p class="notif-time">Hace 3 días</p>
+                        </div>
+                    </li>
+                    <li class="notif-item" role="listitem">
+                        <span class="notif-icon" aria-hidden="true">🎯</span>
+                        <div class="notif-body">
+                            <p class="notif-text">Completaste 3 trivias seguidas esta semana</p>
+                            <p class="notif-time">Hace 5 días</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <button class="icon-button" type="button" aria-label="Notificaciones">
-                <span aria-hidden="true">🔔</span>
-            </button>
-        </header>
+        </div>
 
-        <main class="content" id="main-content">
-            <!-- Search Bar -->
-            <div class="search-bar" role="search">
-                <span class="search-icon" aria-hidden="true">🔍</span>
-                <input type="text" class="search-input" placeholder="Busca derechos, guías o empleos..."
-                    aria-label="Buscar derechos, guías o empleos" data-i18n-placeholder="search.placeholder" />
-            </div>
-
-            <!-- Action Center Header -->
-            <div class="section-header action-center-header">
-                <h2 class="section-title" data-i18n="actionCenter.title">Centro de Acción</h2>
-                <span class="tools-badge" data-i18n="actionCenter.tools">3 HERRAMIENTAS DISPONIBLES</span>
-            </div>
-
-            <!-- Your Rights Card -->
-            <section class="card rights-card" aria-labelledby="rights-title">
-                <div class="rights-image" aria-hidden="true">
-                    <div class="rights-image-overlay"></div>
-                    <div class="rights-icon">⚡</div>
-                </div>
-                <div class="rights-body">
-                    <div class="rights-header">
-                        <h3 id="rights-title" data-i18n="rights.title">Tus Derechos</h3>
-                        <span class="badge essential" data-i18n="rights.badge">ESENCIAL</span>
-                    </div>
-                    <p class="muted" data-i18n="rights.description">
-                        Conoce tus derechos. Accede a guías sobre salario mínimo, descansos y contratos.
-                    </p>
-                    <button class="explore-btn" type="button" id="explore-guides">
-                        <span data-i18n="rights.cta">Explorar Guías</span>
-                        <span aria-hidden="true">→</span>
-                    </button>
-                </div>
-            </section>
-
-            <!-- Anti-Exploitation Guide -->
-            <section class="card alert-card" aria-labelledby="alert-title">
-                <div class="alert-icon" aria-hidden="true">
-                    <span>🛡️</span>
-                </div>
-                <div class="alert-body">
-                    <h3 id="alert-title" data-i18n="alert.title">Guía contra la Explotación</h3>
-                    <p data-i18n="alert.description">
-                        Identifica las señales. Aprende a detectar y denunciar abusos laborales de forma segura.
-                    </p>
-                    <button class="cta alert-cta" type="button" id="get-help">
-                        <span data-i18n="alert.cta">Obtener ayuda ahora</span>
-                    </button>
-                </div>
-            </section>
-
-            <!-- Safe Job Board -->
-            <section class="section" aria-labelledby="jobs-title">
-                <div class="section-header">
-                    <div class="jobs-header-left">
-                        <span class="jobs-icon" aria-hidden="true">💼</span>
-                        <h3 id="jobs-title" data-i18n="jobs.title">Bolsa de Empleo Segura</h3>
-                    </div>
-                    <button class="link" type="button" data-i18n="jobs.viewAll">Ver todo</button>
-                </div>
-
-                <div class="card jobs-card">
-                    <!-- Job 1 -->
-                    <div class="job-item" role="listitem">
-                        <div class="job-avatar" style="background: #fce4ec;">
-                            <span style="color: #e91e63; font-weight: 700;">B</span>
-                        </div>
-                        <div class="job-info">
-                            <h4 data-i18n="jobs.job1.title">Barista</h4>
-                            <p class="muted" data-i18n="jobs.job1.details">Café Centro · Jornada completa</p>
-                        </div>
-                        <div class="job-meta">
-                            <span class="job-salary">$18/hr</span>
-                            <span class="job-tag verified" data-i18n="jobs.verified">VERIFICADO</span>
-                        </div>
-                    </div>
-
-                    <div class="job-divider" aria-hidden="true"></div>
-
-                    <!-- Job 2 -->
-                    <div class="job-item" role="listitem">
-                        <div class="job-avatar" style="background: #fff3e0;">
-                            <span style="color: #e65100; font-weight: 700;">D</span>
-                        </div>
-                        <div class="job-info">
-                            <h4 data-i18n="jobs.job2.title">Repartidor</h4>
-                            <p class="muted" data-i18n="jobs.job2.details">Local Express · Flexible</p>
-                        </div>
-                        <div class="job-meta">
-                            <span class="job-salary">$22/hr</span>
-                            <span class="job-tag new" data-i18n="jobs.new">NUEVO</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Tip Banner -->
-            <section class="tip-banner" aria-label="Tip">
-                <div class="tip-icon" aria-hidden="true">💡</div>
-                <p class="tip-text" data-i18n="tip.text">
-                    <strong>Consejo:</strong> Guarda siempre una copia de tu contrato firmado en un lugar seguro. Usa nuestra herramienta «Vault» para guardar fotos.
-                </p>
-            </section>
-        </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav" aria-label="Principal">
-            <a href="../main-page/index.html" class="nav-item" aria-label="Inicio" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">⌂</span>
-                <span class="nav-label" data-i18n="nav.home">Inicio</span>
-            </a>
-            <button class="nav-item active" type="button" aria-label="Acción" aria-current="page">
-                <span class="nav-icon" aria-hidden="true">◎</span>
-                <span class="nav-label" data-i18n="nav.action">Acción</span>
-            </button>
-            <a href="../challenges/index.html" class="nav-item" aria-label="Retos" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">◉</span>
-                <span class="nav-label" data-i18n="nav.challenges">Retos</span>
-            </a>
-            <a href="../profile/index.html" class="nav-item" aria-label="Perfil" style="text-decoration:none;">
-                <span class="nav-icon" aria-hidden="true">☺</span>
-                <span class="nav-label" data-i18n="nav.profile">Perfil</span>
-            </a>
-        </nav>
-    </div>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <script src="../global-a11y.js"></script>
-    <script src="app.js"></script>
-</body>
-
+        <script src="../global-a11y.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>

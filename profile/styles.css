@@ -50,6 +50,7 @@ body {
     min-height: 100vh;
 }
 
+.app,
 .mobile-container {
     width: min(390px, 100%);
     background: var(--bg);
@@ -105,7 +106,9 @@ body {
     cursor: pointer;
     font-size: 14px;
     box-shadow: 0 4px 12px rgba(17, 19, 26, 0.12);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .edit-btn:hover {
@@ -257,6 +260,24 @@ body {
     border-top: 1px solid #eef0f4;
 }
 
+.setting-item-highlight {
+    background: #fff7f1;
+    border-top: 1px solid #f3e2d2;
+    border-bottom: 1px solid #f3e2d2;
+    position: relative;
+}
+
+.setting-item-highlight::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f26522, #ff9f1a);
+}
+
 .setting-item:first-child {
     border-top: none;
 }
@@ -283,6 +304,19 @@ body {
     font-weight: 600;
     color: var(--text-main);
     margin-bottom: 2px;
+}
+
+.setting-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #ffe8d6;
+    color: #b2440f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
 }
 
 .setting-text p {
@@ -312,7 +346,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: #eef0f4;
-    transition: .3s;
+    transition: 0.3s;
     border-radius: 999px;
 }
 
@@ -324,17 +358,17 @@ body {
     left: 2px;
     bottom: 2px;
     background-color: white;
-    transition: .3s;
+    transition: 0.3s;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background: linear-gradient(90deg, #f26522, #ff9f1a);
     /* match progress bar */
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     transform: translateX(20px);
 }
 
@@ -346,7 +380,11 @@ input:checked+.slider:before {
     align-items: center;
     margin-bottom: 0;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    text-align: left;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .action-card:hover {
@@ -481,7 +519,9 @@ body.subtitles-on .subtitles-banner {
     cursor: pointer;
     display: grid;
     place-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .icon-button:focus-visible {
@@ -552,15 +592,17 @@ body.high-contrast {
     --card-bg: #161b22;
     --card: #161b22;
     --text-main: #f0f6fc;
-    --text-muted: #8b949e;
+    --text-muted: #b8c2cf;
     --text-light: #58a6ff;
     --border-color: #30363d;
     --gray-light: #21262d;
     --accent: #ff7b00;
+    --nav-muted: #b8c2cf;
     /* better contrast */
 }
 
-body.high-contrast .mobile-container {
+body.high-contrast .mobile-container,
+body.high-contrast .app {
     border: 1px solid var(--border-color);
 }
 
@@ -570,6 +612,11 @@ body.high-contrast .action-card,
 body.high-contrast .badges-grid,
 body.high-contrast .bottom-nav {
     border: 1px solid var(--border-color);
+}
+
+body.high-contrast .bottom-nav {
+    background: var(--card-bg);
+    border-top-color: var(--border-color);
 }
 
 body.high-contrast .action-card.danger {
@@ -585,6 +632,21 @@ body.high-contrast .setting-icon {
     color: var(--text-main);
 }
 
+body.high-contrast .setting-item-highlight {
+    background: #2b1a08;
+    border-top-color: #4a3a26;
+    border-bottom-color: #4a3a26;
+}
+
+body.high-contrast .setting-item-highlight::before {
+    background: #ff9f1a;
+}
+
+body.high-contrast .setting-badge {
+    background: #3d2200;
+    color: #ffd2ad;
+}
+
 body.high-contrast .slider {
     background-color: var(--border-color);
 }
@@ -595,7 +657,12 @@ body.high-contrast .view-all {
 
 /* Large Text Mode */
 body.large-text {
-    font-size: 110%;
+    font-size: 124%;
+}
+
+body.large-text .app,
+body.large-text .mobile-container {
+    padding-bottom: 120px;
 }
 
 body.large-text .profile-info h1 {
@@ -618,12 +685,45 @@ body.large-text .setting-text h4 {
     font-size: 16px;
 }
 
+body.large-text .setting-badge {
+    font-size: 11px;
+}
+
 body.large-text .setting-text p {
     font-size: 14px;
+    line-height: 1.3;
 }
 
 body.large-text .action-left {
     font-size: 17px;
+}
+
+body.large-text .settings-list {
+    display: grid;
+}
+
+body.large-text .setting-item {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+body.large-text .setting-icon {
+    margin-right: 0;
+}
+
+body.large-text .toggle-switch {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+body.large-text .badges-grid {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+body.large-text .badge-item {
+    width: calc(50% - 8px);
 }
 
 body.large-text .nav-label {
@@ -632,4 +732,8 @@ body.large-text .nav-label {
 
 body.large-text .badge-item span {
     font-size: 10px;
+}
+
+body.large-text .bottom-nav {
+    padding: 12px 0 14px;
 }
